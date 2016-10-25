@@ -9,12 +9,12 @@ class Memegen:
         self.BASE_URL = "https://memegen.link/api"
 
     def get_templates(self):
-        response = requests.get(self.BASE_URL).json()
+        response = requests.get(self.BASE_URL + "/templates").json()
 
         data = []
 
         for key, value in response.items():
-            name = value.replace(self.BASE_URL, "")
+            name = value.replace(self.BASE_URL + "/templates", "")
             description = key
             data.append((name, description))
 
