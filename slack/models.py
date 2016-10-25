@@ -14,7 +14,7 @@ class Memegen:
         data = []
 
         for key, value in response.items():
-            name = value.replace(self.BASE_URL + "/templates/", "")
+            name = value.replace(self.BASE_URL, "")
             description = key
             data.append((name, description))
 
