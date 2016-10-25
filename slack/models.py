@@ -6,15 +6,15 @@ import requests
 class Memegen:
 
     def __init__(self):
-        self.BASE_URL = "https://memegen.link/api"
+        self.BASE_URL = "https://memegen.link"
 
     def get_templates(self):
-        response = requests.get(self.BASE_URL + "/templates/").json()
+        response = requests.get(self.BASE_URL + "/api/templates/").json()
 
         data = []
 
         for key, value in response.items():
-            name = value.replace(self.BASE_URL + "/templates/", "")
+            name = value.replace(self.BASE_URL + "/api/templates/", "")
             description = key
             data.append((name, description))
 
