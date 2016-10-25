@@ -9,7 +9,7 @@ class Memegen:
         self.BASE_URL = "https://memegen.link/api"
 
     def get_templates(self):
-        response = requests.get(self.BASE_URL + "/templates").json()
+        response = requests.get(self.BASE_URL).json()
 
         data = []
 
